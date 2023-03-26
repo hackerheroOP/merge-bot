@@ -99,12 +99,12 @@ async def loginHandler(c: Client, m: Message):
         try:
             passwd = m.text.split(" ", 1)[1]
         except:
-            await m.reply_text("**Command:**\n  `/login <password>`\n\n**Usage:**\n  `password`: Get the password from owner",quote=True,parse_mode=enums.parse_mode.ParseMode.MARKDOWN)
+            await m.reply_text("**Command:**\n  `/login <password>`\n\n**Usage:**\n  `password`: Get the password from PASSWORD button",quote=True,parse_mode=enums.parse_mode.ParseMode.MARKDOWN)
         passwd = passwd.strip()
         if passwd == Config.PASSWORD:
             user.allowed = True
             await m.reply_text(
-                text=f"**Login passed ✅,**\n  ⚡ Now you can use me!!", quote=True
+                text=f"**Logged In Successfully ✅,**\n  ⚡ Now you can use me!!", quote=True
             )
         else:
             await m.reply_text(
@@ -488,10 +488,10 @@ async def about_handler(c: Client, m: Message):
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/yashoswalyo")],
+                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/pro_morningstar")],
                 [
                     InlineKeyboardButton(
-                        "🏘Source Code🏘", url="https://github.com/yashoswalyo/MERGE-BOT"
+                        "🏘 PASSWORD🏘", url="https://telegram.me/pro_morningstar"
                     ),
                     InlineKeyboardButton(
                         "🤔Deployed By🤔", url=f"https://t.me/{Config.OWNER_USERNAME}"
@@ -741,7 +741,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://github.com/yashoswalyo/merge-bot'>this repo</a>",
+                text="Bot booted with Premium Account,\n\n  Thanks for using",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
@@ -752,3 +752,4 @@ if __name__ == "__main__":
         pass
 
     mergeApp.run()
+    
